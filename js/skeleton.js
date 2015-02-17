@@ -109,12 +109,12 @@ var casper = require('casper').create({
     },
     onWaitTimeout: function () {
         this.echo('Wait timeout reached!', 'ERROR');
-         makeSC('_waittimeout');
+         makeSC('_waittimeout',this);
          this.echo("Current URL: "+casper.getCurrentUrl(),'ERROR');
     },
     onStepTimeout: function () {
         this.echo('Step timeout reached!', 'ERROR');
-         makeSC('_steptimeout');
+         makeSC('_steptimeout',this);
          this.echo("Current URL: "+casper.getCurrentUrl(),'ERROR');
     }
 });
@@ -140,7 +140,7 @@ casper.on("page.error", function(msg, backtrace) {
 casper.on('error', function(msg, backtrace) {
     this.echo('General Error:','ERROR');
     this.echo(msg,'WARNING');
-    makeSC('_error');
+    makeSC('_error',this);
 });
 
 

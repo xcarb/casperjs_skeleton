@@ -121,11 +121,13 @@ var casper = require('casper').create({
 
 
 casper.on('load.finished', function (status) {
-    this.echo('Status: ' + status);
+    this.echo('Status: ' + status, 'INFO_BAR');
+    this.echo("Current URL: "+casper.getCurrentUrl(),'INFO');
 })
 
 casper.on('remote.message', function (msg) {
-    this.echo('Remote Msg: ' + msg);
+    this.echo('Remote Msg: ' + msg,'INFO');
+    this.echo("Current URL: "+casper.getCurrentUrl(),'INFO');
 })
 
 casper.on("page.error", function(msg, backtrace) {

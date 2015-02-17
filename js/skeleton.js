@@ -160,14 +160,14 @@ casper.page.onInitialized = function () {
         mimes.length = 3;
         mimes['application/x-shockwave-flash'] = {
             description: "Adobe Flash movie",
-            enabledPlugin: rnditem,
+            enabledPlugin: mtype,
             suffixes: "swf",
             type: "application/x-shockwave-flash"
         }
         plugs.length = 6;
         plugs['Shockwave Flash'] = {
             description: "Adobe Flash movie",
-            enabledPlugin: rnditem,
+            enabledPlugin: mtype,
             suffixes: "swf",
             type: "application/x-shockwave-flash"
         }
@@ -176,7 +176,7 @@ casper.page.onInitialized = function () {
         window.navigator.plugins = plugs;
 
 
-    }, rnditem);
+    }, mtype);
 };
 
 

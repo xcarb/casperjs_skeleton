@@ -1,3 +1,19 @@
+function randomIntFromInterval(min,max)
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+function makeSC(postfix,casp)
+{
+    casp.capture(postfix+'.png', {
+        top: 0,
+        left: 0,
+        width: 640,
+        height: 480
+    });
+}
+
+
 var mimeTypes = [
 {
     description : "Shockwave Flash 12.0 r0",

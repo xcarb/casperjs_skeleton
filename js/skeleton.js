@@ -83,7 +83,7 @@ var url = "http://google.com";
 
 try {
     var data = fs.read('user_agents.txt');
-    var uas = data.split("\r\n");
+    var uas = data.split("\n");
 
     var useragent = uas[Math.floor(Math.random() * uas.length)];
 
